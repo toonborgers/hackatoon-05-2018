@@ -6,10 +6,11 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 import static org.springframework.web.reactive.function.BodyInserters.fromObject;
+import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 @Component
 public class FooHandler {
     public Mono<ServerResponse> handle(ServerRequest request) {
-        return ServerResponse.ok().body(fromObject("Foo"));
+        return ok().body(fromObject("Foo"));
     }
 }
