@@ -14,7 +14,7 @@ _Tasks_
 _Set up commandline_
 1. Install google cloud sdk: [link](https://cloud.google.com/sdk/docs/quickstart-macos)
 2. Add k8s support: `gcloud components install kubectl`
-3. Point local kubelet to remote cluster: `gcloud container clusters get-credentials <clustername> --zone=<clusterzone>
+3. Point local kubelet to remote cluster: `gcloud container clusters get-credentials <clustername> --zone=<clusterzone>`
 
 _Tag and push image to gcr_
 1. `docker tag <image> gcr.io/$PROJECT_ID/name:tag`
