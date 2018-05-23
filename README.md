@@ -1,6 +1,6 @@
 Repo for the hackatoon @ cegeka on 23-24 May 2018
 
-_Steps_
+_Tasks_
 * Create simple foo microservice ✅
 * Push Docker image to google cloud ✅ 
 * Deploy instance on k8s ✅
@@ -10,3 +10,12 @@ _Steps_
 * Add circuit breaker for fallback ❌
 * Deploy using k8s deployment file ❌
 * Add spring gateway in front ❌
+
+_Set up commandline_
+1. Install google cloud sdk: [link](https://cloud.google.com/sdk/docs/quickstart-macos)
+2. Add k8s support: `gcloud components install kubectl`
+3. Point local kubelet to remote cluster: `gcloud container clusters get-credentials <clustername> --zone=<clusterzone>
+
+_Tag and push image to gcr_
+1. `docker tag <image> gcr.io/$PROJECT_ID/name:tag`
+2. `gcloud docker -- push gcr.io/$PROJECT_ID/name:tag` 
