@@ -1,7 +1,7 @@
 Repo for the hackatoon @ cegeka on 23-24 May 2018
 
 _Steps_
-* Create simple foo microservice ❌
+* Create simple foo microservice ✅
 * Push Docker image to google cloud ❌
 * Deploy instance on k8s ❌
 * Create bar microservice ❌
