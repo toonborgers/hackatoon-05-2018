@@ -8,8 +8,8 @@ Repo for the hackatoon @ cegeka on 23-24 May 2018
 * Push docker image + deploy to k8s ✅
 * Make foo service call bar service ✅
 * Add circuit breaker for fallback ✅
-* Deploy using k8s deployment file ❌
 * Add spring gateway in front ❌
+* Deploy using k8s deployment file ❌
 
 ## Set up commandline
 1. Install google cloud sdk: [link](https://cloud.google.com/sdk/docs/quickstart-macos)
