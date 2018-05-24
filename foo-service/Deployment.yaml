@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: foo
+  labels:
+    app: foo
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: foo
+      labels:
+        app: foo
+    spec:
+      containers:
+      - name: foo
+        image: gcr.io/hackatoon-23052018/foo-service:5
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8080
+      restartPolicy: Always
+
+  selector:
+    matchLabels:
+      app: foo
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: foo-service
+spec:
+  selector:
+    app: foo
+  ports:
+    - port: 8080
+  type: LoadBalancer
