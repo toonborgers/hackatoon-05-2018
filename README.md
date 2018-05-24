@@ -9,6 +9,7 @@ Repo for the hackatoon @ cegeka on 23-24 May 2018
 * Make foo service call bar service ✅
 * Add circuit breaker for fallback ✅
 * Deploy using k8s deployment file ✅
+* Deploy Jenkins ❌
 
 
 ## Set up commandline
