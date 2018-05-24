@@ -1,3 +1,14 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: http-credentials
+type: Opaque
+data:
+  user: cGF0cmljaw== #patrick
+  password: bHVkbw== #ludo
+
+---
+
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -5,7 +16,7 @@ metadata:
   labels:
     app: foo
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       name: foo
@@ -14,10 +25,21 @@ spec:
     spec:
       containers:
       - name: foo
-        image: gcr.io/hackatoon-23052018/foo-service:5
+        image: gcr.io/hackatoon-23052018/foo-service:7
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
+        env:
+          - name: HTTP_USER
+            valueFrom:
+              secretKeyRef:
+                key: user
+                name: http-credentials
+          - name: HTTP_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: http-credentials
       restartPolicy: Always
 
   selector:
