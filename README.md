@@ -1,4 +1,4 @@
-Repo for the hackatoon @ cegeka on 23-24 May 2018
+Repo for the hackatoon @ Cegeka on 23-24 May 2018
 
 ## Tasks
 * Create simple foo microservice ✅
